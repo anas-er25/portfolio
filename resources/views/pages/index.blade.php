@@ -5,6 +5,10 @@
     <title>ANAS ER-RAKIBI - Portfolio</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="AnasFolio - Full-stack Developer Portfolio">
+    <meta name="keywords" content="anas, er-rakibi, portfolio, developer, full-stack, full stack, React, Laravel, HTML, CSS, JavaScript, Azure, JQUERY, MongoDB, Docker, Front-end, Back-end, Front end, Back end, Bootstrap, PHP, Python, MySQL">
+    <meta name="author" content="Anas Er-Rakibi">
+    <meta name="robots" content="index,follow">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{ asset('images/logo1.png') }}">
 
@@ -449,8 +453,8 @@
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Services</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
-                            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a>
+                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
+                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web Development</a>
                             </li>
 
                         </ul>

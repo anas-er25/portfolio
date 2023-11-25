@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="AnasFolio - Full-stack Developer Portfolio">
+    <meta name="keywords" content="anas, er-rakibi, portfolio, developer, full-stack, full stack, React, Laravel, HTML, CSS, JavaScript, Azure, JQUERY, MongoDB, Docker, Front-end, Back-end, Front end, Back end, Bootstrap, PHP, Python, MySQL">
+    <meta name="author" content="Anas Er-Rakibi">
+    <meta name="robots" content="index,follow">
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('images/logo1.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('images/logo1.png') }}">
     <!-- CSRF Token -->

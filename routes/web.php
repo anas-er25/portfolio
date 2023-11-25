@@ -64,7 +64,7 @@ Route::get('/admin/skill/{id}/destroy', [SkillController::class, 'destroy'])->na
 
 
 // les pages login et register et admin
-Route::get('/anas', [StaticController::class, 'register'])->name('home.register');
+// Route::get('/anas', [StaticController::class, 'register'])->name('home.register');
 // Route::get('/login', [StaticController::class, 'login'])->name('home.login');
 // Route::get('/password/reset',[StaticController::class,'reset'])->name('password.request');
 // Route::post('/password/reset', [StaticController::class, 'resetPost'])->name('password.request.post');
