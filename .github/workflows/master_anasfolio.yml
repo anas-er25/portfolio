@@ -63,4 +63,4 @@ jobs:
           app-name: 'AnasFolio'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_19ECB41E732F443DA8751026180A760D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C93EF7E05A124F21B9BA451B8537CB98 }}
