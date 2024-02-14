@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="AnasFolio - Full-stack Developer Portfolio">
-    <meta name="keywords" content="anas, er-rakibi, portfolio, developer, full-stack, full stack, React, Laravel, HTML, CSS, JavaScript, Azure, JQUERY, MongoDB, Docker, Front-end, Back-end, Front end, Back end, Bootstrap, PHP, Python, MySQL">
+    <meta name="keywords"
+        content="anas, er-rakibi, portfolio, developer, full-stack, full stack, React, Laravel, HTML, CSS, JavaScript, Azure, JQUERY, MongoDB, Docker, Front-end, Back-end, Front end, Back end, Bootstrap, PHP, Python, MySQL">
     <meta name="author" content="Anas Er-Rakibi">
     <meta name="robots" content="index,follow">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -61,25 +62,7 @@
                         <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
                     @endif
                     <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-                    @if (auth()->check())
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @else
-                        <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link"><span>Login</span></a></li>
-                    @endif
+
 
 
                 </ul>
@@ -140,7 +123,7 @@
                                 <li class="d-flex"><span>Date of birth:</span> <span>November 25,2002</span></li>
                                 <li class="d-flex"><span>Address:</span> <span>Ouarzazate 45000 Morocco</span></li>
                                 <li class="d-flex"><span>Email:</span> <span>errakibianas8@gmail.com</span></li>
-                                <li class="d-flex"><span>Phone: </span> <span>+212 696486911</span></li>
+                                <li class="d-flex"><span>Phone: </span> <span>+212 682614460</span></li>
                             </ul>
                         </div>
                     </div>
@@ -181,7 +164,8 @@
             </div>
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6 text-center ftco-animate">
-                    <p><a href="{{ asset('pdfs/cv.pdf') }}" class="btn btn-primary py-4 px-5" download>Download CV</a></p>
+                    <p><a href="{{ asset('pdfs/cv.pdf') }}" class="btn btn-primary py-4 px-5" download>Download
+                            CV</a></p>
                 </div>
             </div>
         </div>
@@ -330,25 +314,25 @@
             </div>
 
             <div class="row d-flex contact-info mb-5">
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="col-md-6 col-lg-4 d-flex ftco-animate">
                     <div class="align-self-stretch box p-4 text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-map-signs"></span>
                         </div>
                         <h3 class="mb-4">Address</h3>
-                        <p>Ouarzazate 45000 Morocco</p>
+                        <p class="text-white">Ouarzazate 45000 Morocco</p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="col-md-6 col-lg-4 d-flex ftco-animate">
                     <div class="align-self-stretch box p-4 text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-phone2"></span>
                         </div>
                         <h3 class="mb-4">Contact Number</h3>
-                        <p><a href="tel:+212 696486911">+212 696486911</a></p>
+                        <p><a href="tel:+212 682614460">+212 682614460</a></p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="col-md-6 col-lg-4 d-flex ftco-animate">
                     <div class="align-self-stretch box p-4 text-center">
                         <div class="icon d-flex align-items-center justify-content-center">
                             <span class="icon-paper-plane"></span>
@@ -357,17 +341,7 @@
                         <p><a href="mailto:errakibianas8@gmail.com">errakibianas8@gmail.com</a></p>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-                    <div class="align-self-stretch box p-4 text-center">
-                        <div class="icon d-flex align-items-center justify-content-center">
-                            <span class="icon-globe"></span>
-                        </div>
-                        <h3 class="mb-4">ANASFOLIO</h3>
-                        <p><a href="{{ url('https://anas-er25.github.io/DEVOWFS2024/') }}">DEVOWFS.com</a></p>
-                    </div>
-                </div>
             </div>
-
             <div class="row no-gutters block-9">
                 <div class="col-md-6 order-md-last d-flex">
                     <form action="{{ url('contact_mail') }}" class="bg-light p-4 p-md-5 contact-form"
@@ -422,7 +396,8 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">About</h2>
-                        <p>Hi there!, my name is ER-RAKIBI Anas, I'm a fullstack developer student currently in my second year of study at OFPPT Ouarzazate.</p>
+                        <p>Hi there!, my name is ER-RAKIBI Anas, I'm a fullstack developer student currently in my
+                            second year of study at OFPPT Ouarzazate.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="https://www.linkedin.com/in/anas-er-rakibi/"><span
                                         class="icon-linkedin-square"></span></a></li>
@@ -453,8 +428,10 @@
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Services</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web Design</a></li>
-                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web Development</a>
+                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web
+                                    Design</a></li>
+                            <li><a href="#services-section"><span class="icon-long-arrow-right mr-2"></span>Web
+                                    Development</a>
                             </li>
 
                         </ul>
@@ -467,9 +444,8 @@
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">Ouarzazate 45000
                                         Morocco</span></li>
-                                <li><a href="tel:+212696486911"><span class="icon icon-phone"></span><span
-                                            class="text">+212
-                                            696486911</span></a></li>
+                                <li><a href="tel:+212 682614460"><span class="icon icon-phone"></span><span
+                                            class="text">+212 682614460</span></a></li>
                                 <li>
                                     <a href="mailto:errakibianas8@gmail.com">
                                         <span class="icon icon-envelope"></span>
@@ -488,8 +464,8 @@
                         Copyright &copy;
                         <script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved by <a href="/"
-                            target="_blank">Anas ER-RAKIBI</a>
+                        </script> All rights reserved by <a href="/" target="_blank">Anas
+                            ER-RAKIBI</a>
                     </p>
                 </div>
             </div>

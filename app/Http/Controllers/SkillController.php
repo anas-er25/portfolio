@@ -78,9 +78,8 @@ class SkillController extends Controller
         $update = Skill::findOrFail($id);
         $update->skill_name = strip_tags($request->input('skill_name'));
         $update->percent = strip_tags($request->input('percent'));
-
         $update->save();
-
+        
         return redirect()->route('admin.dashboard')->with('success', "Le compétence est modifié avec succès");
 
     }
