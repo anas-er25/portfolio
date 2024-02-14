@@ -1,30 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\StaticController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ResumeController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SkillController;
-use App\Http\Controllers\ContactFormController;
-use App\Mail\HelloMail;
 use App\Models\Project;
 use App\Models\Resume;
 use App\Models\Skill;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 // routes/web.php
 
@@ -40,27 +24,31 @@ Route::get('/register', [StaticController::class, 'index'])->name('home.index');
 
 
 // Project
-Route::get('/admin/project/create', [ProjectController::class, 'create'])->name('admin.project.create');
-Route::post('/admin/project/create', [ProjectController::class, 'store'])->name('admin.project.store');
-Route::put('/admin/projects/{id}/update', [ProjectController::class, 'update'])->name('admin.project.update');
-Route::get('/admin/projects/{id}/edit', [ProjectController::class, 'edit'])->name('admin.project.edit');
-Route::get('/admin/projects/{id}/destroy', [ProjectController::class, 'destroy'])->name('admin.project.destroy');
-
-
+Route::prefix('/admin/project')->name('admin.project.')->group(function(){
+    Route::get('/create', [ProjectController::class, 'create'])->name('create');
+    Route::post('/create', [ProjectController::class, 'store'])->name('store');
+    Route::put('/{id}/update', [ProjectController::class, 'update'])->name('update');
+    Route::get('/{id}/edit', [ProjectController::class, 'edit'])->name('edit');
+    Route::get('/{id}/destroy', [ProjectController::class, 'destroy'])->name('destroy');
+});
 
 //resume
-Route::get('/admin/resume/create', [ResumeController::class, 'create'])->name('admin.resume.create');
-Route::post('/admin/resume/create', [ResumeController::class, 'store'])->name('admin.resume.store');
-Route::put('/admin/resume/{id}/update', [ResumeController::class, 'update'])->name('admin.resume.update');
-Route::get('/admin/resume/{id}/edit', [ResumeController::class, 'edit'])->name('admin.resume.edit');
-Route::get('/admin/resume/{id}/destroy', [ResumeController::class, 'destroy'])->name('admin.resume.destroy');
+Route::prefix('/admin/resume')->name('admin.resume.')->group(function(){
+    Route::get('/create', [ResumeController::class, 'create'])->name('create');
+    Route::post('/create', [ResumeController::class, 'store'])->name('store');
+    Route::put('/{id}/update', [ResumeController::class, 'update'])->name('update');
+    Route::get('/{id}/edit', [ResumeController::class, 'edit'])->name('edit');
+    Route::get('/{id}/destroy', [ResumeController::class, 'destroy'])->name('destroy');
+});
 
 //skill
-Route::get('/admin/skill/create', [SkillController::class, 'create'])->name('admin.skill.create');
-Route::post('/admin/skill/create', [SkillController::class, 'store'])->name('admin.skill.store');
-Route::put('/admin/skill/{id}/update', [SkillController::class, 'update'])->name('admin.skill.update');
-Route::get('/admin/skill/{id}/edit', [SkillController::class, 'edit'])->name('admin.skill.edit');
-Route::get('/admin/skill/{id}/destroy', [SkillController::class, 'destroy'])->name('admin.skill.destroy');
+Route::prefix('/admin/skill')->name('admin.skill.')->group(function(){
+    Route::get('/create', [SkillController::class, 'create'])->name('create');
+    Route::post('/create', [SkillController::class, 'store'])->name('store');
+    Route::put('/{id}/update', [SkillController::class, 'update'])->name('update');
+    Route::get('/{id}/edit', [SkillController::class, 'edit'])->name('edit');
+    Route::get('/{id}/destroy', [SkillController::class, 'destroy'])->name('destroy');
+});
 
 
 // les pages login et register et admin
@@ -79,7 +67,6 @@ Route::get('/home', function () {
 })->middleware(['auth', 'verified'])->name('pages.home');
 
 
-
 Route::get('/admin/dashboard', function () {
     $projects = Project::all();
     $resumes = Resume::all();
@@ -88,8 +75,8 @@ Route::get('/admin/dashboard', function () {
     return view('pages.home', compact('projects', 'resumes', 'skills'));
 })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-
-Route::get('/login', function () {
+Route::redirect('/login', 'portfolio', 301);
+Route::get('/anasfolio/admin/login', function () {
     if (Auth::check()) {
         return redirect()->route('pages.home');
     }

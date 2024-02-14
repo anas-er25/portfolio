@@ -14,7 +14,7 @@ class Authenticate extends Middleware
     {
         if(!$request->expectsJson()){
 
-            return url('/login');
+            return url('/anasfolio/admin/login');
         }
     }
 }

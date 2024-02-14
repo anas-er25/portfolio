@@ -32,7 +32,7 @@ class ProjectController extends Controller
         $request->validate([
             'title' => 'required',
             'link_project' => 'required',
-            'image_project' => 'required', 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_project' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $creproject = new Project();
